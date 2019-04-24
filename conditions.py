@@ -37,3 +37,8 @@ if x < y:
 
 if x == '2':
     print(x,"is equal to",y)
+
+if x < y < z > x < z:
+    print("That worked!")
+else:
+    print("That did not work")
