@@ -4,9 +4,10 @@
 class Employee:
 
     def __init__(self):
-        self.first_name = "Bill"
-        self.last_name = "Clinton"
-        self.uid = 355
+        self.first_name = "N/A"
+        self.last_name = "N/A"
+        self. position = "N/A"
+        self.uid = 0
 
     def get_first_name(self):
         return self.first_name
@@ -14,8 +15,23 @@ class Employee:
     def get_last_name(self):
         return self.last_name
 
+    def get_position(self):
+        return self.position
+
     def get_uid(self):
         return self.uid
+
+    def set_first_name(self, xFirstName):
+        self.first_name = xFirstName
+
+    def set_last_name(self, xLastName):
+        self.last_name = xLastName
+
+    def set_position(self, xPosition):
+        self.position = xPosition
+
+    def set_uid(self, xUID):
+        self.uid = xUID
 
 
 def main():
@@ -23,6 +39,15 @@ def main():
     print("\n\t***Welcome to the Employee Database***\n\n"
           "First name:", employee_01.get_first_name(), "\n"
           "Last name:", employee_01.get_last_name(), "\n"
+          "Position:", employee_01.get_position(), "\n"
+          "User ID:", employee_01.get_uid(), "\n")
+    employee_01.set_first_name("John")
+    employee_01.set_last_name("Smith")
+    employee_01.set_position("Manager")
+    employee_01.set_uid(446)
+    print("First name:", employee_01.get_first_name(), "\n"
+          "Last name:", employee_01.get_last_name(), "\n"
+          "Position:", employee_01.get_position(), "\n"
           "User ID:", employee_01.get_uid(), "\n")
 
 
