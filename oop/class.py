@@ -9,6 +9,9 @@ class Employee:
         self. position = "N/A"
         self.uid = 0
 
+    def __del__(self):
+        print("Object", self, "is deleted!")
+
     def get_first_name(self):
         return self.first_name
 
@@ -41,6 +44,7 @@ def main():
           "Last name:", employee_01.get_last_name(), "\n"
           "Position:", employee_01.get_position(), "\n"
           "User ID:", employee_01.get_uid(), "\n")
+    print(employee_01)
     employee_01.set_first_name("John")
     employee_01.set_last_name("Smith")
     employee_01.set_position("Manager")
@@ -49,6 +53,11 @@ def main():
           "Last name:", employee_01.get_last_name(), "\n"
           "Position:", employee_01.get_position(), "\n"
           "User ID:", employee_01.get_uid(), "\n")
+    print(employee_01)
+
+    # Deleting an instance of a class
+    del(employee_01)
+    # print(employee_01)
 
 
 main()
