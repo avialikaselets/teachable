@@ -1,16 +1,17 @@
 #!/usr/bin/python3
 
 
-class Employee:
+class BankAccount:
 
-    def __init__(self):
-        self.first_name = "N/A"
-        self.last_name = "N/A"
-        self. position = "N/A"
-        self.uid = 0
-
-    def __del__(self):
-        print("Object", self, "is deleted!")
+    def __init__(self,
+                 x_first_name,
+                 x_last_name,
+                 x_account_number,
+                 x_deposit_amount):
+        self.first_name = x_first_name
+        self.last_name = x_last_name
+        self.account_number = x_account_number
+        self.deposit_amount = x_deposit_amount
 
     def get_first_name(self):
         return self.first_name
@@ -18,46 +19,43 @@ class Employee:
     def get_last_name(self):
         return self.last_name
 
-    def get_position(self):
-        return self.position
+    def get_account_number(self):
+        return self.account_number
 
-    def get_uid(self):
-        return self.uid
+    def get_deposit_amount(self):
+        return self.deposit_amount
 
-    def set_first_name(self, xFirstName):
-        self.first_name = xFirstName
+    def set_first_name(self, x_first_name):
+        self.first_name = x_first_name
 
-    def set_last_name(self, xLastName):
-        self.last_name = xLastName
+    def set_last_name(self, x_last_name):
+        self.last_name = x_last_name
 
-    def set_position(self, xPosition):
-        self.position = xPosition
+    def set_account_number(self, x_account_number):
+        self.account_number = x_account_number
 
-    def set_uid(self, xUID):
-        self.uid = xUID
+    def set_deposit_amount(self, x_deposit_amount):
+        self.deposit_amount = x_deposit_amount
 
 
 def main():
-    employee_01 = Employee()
-    print("\n\t***Welcome to the Employee Database***\n\n"
-          "First name:", employee_01.get_first_name(), "\n"
-          "Last name:", employee_01.get_last_name(), "\n"
-          "Position:", employee_01.get_position(), "\n"
-          "User ID:", employee_01.get_uid(), "\n")
-    print(employee_01)
-    employee_01.set_first_name("John")
-    employee_01.set_last_name("Smith")
-    employee_01.set_position("Manager")
-    employee_01.set_uid(446)
-    print("First name:", employee_01.get_first_name(), "\n"
-          "Last name:", employee_01.get_last_name(), "\n"
-          "Position:", employee_01.get_position(), "\n"
-          "User ID:", employee_01.get_uid(), "\n")
-    print(employee_01)
+    clients = []
 
-    # Deleting an instance of a class
-    del(employee_01)
-    # print(employee_01)
+    for i in range(3):
+        print("Input data for customer", i+1)
+        first_name = input("Specify first name: ")
+        last_name = input("Specify last name: ")
+        account_number = input("Specify account number: ")
+        deposit_amount = input("Specify deposit amount: ")
+        clients.append(BankAccount(first_name, last_name, account_number,
+                                   deposit_amount))
+        print("\n")
+
+    for client in clients:
+        print("First name: ", client.first_name, "\n"
+              "Last name: ", client.last_name, "\n"
+              "Account number: ", client.account_number, "\n"
+              "Deposit amount: ", client.deposit_amount)
 
 
 main()
