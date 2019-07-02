@@ -26,6 +26,16 @@ class SavingsAccount(BankAccount):
 '''
 
 
+def transfer_funds(src_account, dst_account, amount):
+    if amount <= src_account.get_balance():
+        src_account.withdraw_funds(amount)
+        dst_account.deposit_funds(amount)
+        print("Transferred ", amount, "$ between checking and savings accounts",
+              sep="")
+    else:
+        print("Insufficient funds!")
+
+
 def main():
     savings_account_01 = SavingsAccount(100)
     print("Saving account balance: $", savings_account_01.get_balance(),
@@ -46,6 +56,14 @@ def main():
 
     print("Making deposit into savings account for 300$...")
     savings_account_01.deposit_funds(300)
+    print("New savings account balance: $", savings_account_01.get_balance(),
+          sep="")
+
+    print("")
+
+    transfer_funds(checking_account_01, savings_account_01, 300)
+    print("New checking account balance: $", checking_account_01.get_balance(),
+          sep="")
     print("New savings account balance: $", savings_account_01.get_balance(),
           sep="")
 
