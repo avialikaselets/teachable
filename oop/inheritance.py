@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-from bank_account import BankAccount
+# from bank_account import BankAccount
 from savings_account import SavingsAccount
+from checking_account import CheckingAccount
 
 '''
 class BankAccount:
@@ -26,11 +27,29 @@ class SavingsAccount(BankAccount):
 
 
 def main():
-    account_01 = BankAccount(500)
-    print(account_01.get_balance())
+    savings_account_01 = SavingsAccount(100)
+    print("Saving account balance: $", savings_account_01.get_balance(),
+          sep="")
 
-    savings_account_01 = SavingsAccount(300)
-    print(savings_account_01.get_balance())
+    checking_account_01 = CheckingAccount(500)
+    print("Checking account balance: $", checking_account_01.get_balance(),
+          sep="")
+
+    print("")
+
+    print("Making deposit into checking account for 75$...")
+    checking_account_01.deposit_funds(75)
+    print("New checking account balance: $", checking_account_01.get_balance(),
+          sep="")
+
+    print("")
+
+    print("Making deposit into savings account for 300$...")
+    savings_account_01.deposit_funds(300)
+    print("New savings account balance: $", savings_account_01.get_balance(),
+          sep="")
+
+    print("")
 
 
 main()
